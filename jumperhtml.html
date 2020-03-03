@@ -23,9 +23,19 @@
       }
       
       function draw() {
+        console.log(jumper.x, jumper.y);
         clear(); // clear canvas every time
         jumper.show(); //load show
         jumper.update();  //load update
+        
+        if ((keyIsDown(37)) && (jumper.x > 25)) { //left
+          jumper.x -= 10;
+        }
+        
+        if ((keyIsDown(39)) && (jumper.x < w-25)) { //right
+          jumper.x += 10;
+        }
+
       }
       
       function keyPressed() {
@@ -33,8 +43,9 @@
           jumper.up();
         }
         
-        
       }
+
+        
     </script>
   </body>
 </html>
