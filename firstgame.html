@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+  </head>
+  <body>
+  <script>
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var playerX = w / 2;
+    var playerY = h / 2;
+    
+    function setup() {
+      createCanvas(w, h);
+    }
+    
+    
+    function draw() {
+        clear();
+        
+      //create player
+      rect(playerX, playerY, 50, 50);
+      
+      //color player red
+      fill("red");
+       //If key is W, move the player up
+      if (keyIsDown(87) && playerY > 10) {
+        playerY -= 10;
+      }
+      //move player down, when the S key is held on
+      if (keyIsDown(83) && playerY < h-60) {
+        playerY += 10;
+      }
+      //move player left
+      if (keyIsDown(65) && playerX > 10) {
+        playerX -= 10;
+      }
+         //move player right
+      if (keyIsDown(68) && playerX < w-60) {
+        playerX += 10;
+      }
+    }
+  </script>
+  </body>
+</html>
